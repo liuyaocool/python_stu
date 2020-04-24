@@ -1,3 +1,5 @@
+# 卷积核
+
 from func import *
 
 img = imgread('lovely.jpg')
