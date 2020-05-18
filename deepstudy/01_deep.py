@@ -1,6 +1,8 @@
+# 深度学习
 import matplotlib.pyplot as plt
 import numpy as np
 
+# 单层感知器 ===========================================================
 # 定义输入数据
 X = np.array([
 	[1,3,3],
