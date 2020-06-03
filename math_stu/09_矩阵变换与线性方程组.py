@@ -1,147 +1,147 @@
 
 
-    "import numpy as np\n",
-    "import pandas as pd\n",
-    "import matplotlib.pyplot as plt\n",
-    "% matplotlib inline\n",
-    "# 导入模块\n",
-    "\n",
-    "import warnings\n",
-    "warnings.filterwarnings('ignore') \n",
-    "# 不发出警告"
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+% matplotlib inline
+# 导入模块
 
-    "2.3.1 矩阵变换"
+import warnings
+warnings.filterwarnings('ignore') 
+    # 不发出警告
 
-    "a = np.array([\n",
-    "        [2,-1,-1,1],\n",
-    "        [1,1,-2,1],\n",
-    "        [4,-6,2,-2],\n",
-    "        [3,6,-9,7]\n",
-    "    ])\n",
-    "a1 = np.array([\n",
-    "        [2,-1,-1,1],\n",
-    "        [4,1,-2,1],\n",
-    "        [4,-6,2,-2],\n",
-    "        [9,6,-9,7]\n",
-    "    ])\n",
-    "a2 = np.array([\n",
-    "        [2,2,-1,1],\n",
-    "        [1,4,-2,1],\n",
-    "        [4,4,2,-2],\n",
-    "        [3,9,-9,7]\n",
-    "    ])\n",
-    "a3 = np.array([\n",
-    "        [2,-1,2,1],\n",
-    "        [1,1,4,1],\n",
-    "        [4,-6,4,-2],\n",
-    "        [3,6,9,7]\n",
-    "    ])\n",
-    "a4 = np.array([\n",
-    "        [2,-1,-1,2],\n",
-    "        [1,1,-2,4],\n",
-    "        [4,-6,2,4],\n",
-    "        [3,6,-9,9]\n",
-    "    ])\n",
-    "\n",
-    "x1 = np.linalg.det(a1)/np.linalg.det(a)\n",
-    "x2 = np.linalg.det(a2)/np.linalg.det(a)\n",
-    "x3 = np.linalg.det(a3)/np.linalg.det(a)\n",
-    "x4 = np.linalg.det(a4)/np.linalg.det(a)\n",
-    "\n",
-    "print('该方程的四个根为：x1=%.2f, x2=%.2f, x3=%.2f, x4=%.2f' % (x1,x2,x3,x4))"
+    # 2.3.1 矩阵变换
 
-    "a = np.array([\n",
-    "        [0,-2,1],\n",
-    "        [3,0,-2],\n",
-    "        [-2,3,0]\n",
-    "    ])\n",
-    "\n",
-    "print(np.linalg.inv(a))\n",
-    "np.linalg.det(a)"
+a = np.array([
+        [2,-1,-1,1],
+        [1,1,-2,1],
+        [4,-6,2,-2],
+        [3,6,-9,7]
+    ])
+a1 = np.array([
+        [2,-1,-1,1],
+        [4,1,-2,1],
+        [4,-6,2,-2],
+        [9,6,-9,7]
+    ])
+a2 = np.array([
+        [2,2,-1,1],
+        [1,4,-2,1],
+        [4,4,2,-2],
+        [3,9,-9,7]
+    ])
+a3 = np.array([
+        [2,-1,2,1],
+        [1,1,4,1],
+        [4,-6,4,-2],
+        [3,6,9,7]
+    ])
+a4 = np.array([
+        [2,-1,-1,2],
+        [1,1,-2,4],
+        [4,-6,2,4],
+        [3,6,-9,9]
+    ])
 
-    "2.3.2 线性方程组"
+x1 = np.linalg.det(a1)/np.linalg.det(a)
+x2 = np.linalg.det(a2)/np.linalg.det(a)
+x3 = np.linalg.det(a3)/np.linalg.det(a)
+x4 = np.linalg.det(a4)/np.linalg.det(a)
 
-    "# 计算秩\n",
-    "\n",
-    "a = np.array([\n",
-    "        [1,2,3],\n",
-    "        [2,3,-5],\n",
-    "        [4,7,1]\n",
-    "    ])\n",
-    "b = np.array([\n",
-    "        [3,2,0,5,0],\n",
-    "        [3,-2,3,6,-1],\n",
-    "        [2,0,1,5,-3],\n",
-    "        [1,6,-4,-1,4]\n",
-    "    ])\n",
-    "r1 = np.linalg.matrix_rank(a)\n",
-    "r2 = np.linalg.matrix_rank(b)\n",
-    "\n",
-    "print(r1,r2)"
+print('该方程的四个根为：x1=%.2f, x2=%.2f, x3=%.2f, x4=%.2f' % (x1,x2,x3,x4))
 
-    "# 例子\n",
-    "a = np.array([\n",
-    "        [1,2,2,3],\n",
-    "        [2,1,-2,-2],\n",
-    "        [1,-2,-4,-3]\n",
-    "    ])\n",
-    "ab = np.array([\n",
-    "        [1,2,2,3,0],\n",
-    "        [2,1,-2,-2,0],\n",
-    "        [1,-2,-4,-3,0]\n",
-    "    ])\n",
-    "n = 4\n",
-    "ra = np.linalg.matrix_rank(a)\n",
-    "rab = np.linalg.matrix_rank(ab)\n",
-    "\n",
-    "print(n,ra,rab)"
+a = np.array([
+        [0,-2,1],
+        [3,0,-2],
+        [-2,3,0]
+    ])
 
-    "# 练习1\n",
-    "\n",
-    "a = np.array([\n",
-    "        [3,-2,0,-1],\n",
-    "        [0,2,2,1],\n",
-    "        [1,-2,-3,-2],\n",
-    "        [0,1,2,1]\n",
-    "    ])\n",
-    "\n",
-    "print(np.linalg.inv(a))\n",
-    "np.linalg.det(a)"
+print(np.linalg.inv(a))
+np.linalg.det(a)
 
-    "# 练习2 (1)\n",
-    "\n",
-    "a = np.array([\n",
-    "        [1,1,2,-1],\n",
-    "        [2,1,1,-1],\n",
-    "        [2,2,1,2]\n",
-    "    ])\n",
-    "ab = np.array([\n",
-    "        [1,1,2,-1,0],\n",
-    "        [2,1,1,-1,0],\n",
-    "        [2,2,1,2,0]\n",
-    "    ])\n",
-    "n = 4\n",
-    "ra = np.linalg.matrix_rank(a)\n",
-    "rab = np.linalg.matrix_rank(ab)\n",
-    "\n",
-    "print(n,ra,rab)"
+    # 2.3.2 线性方程组
 
-    "# 练习2 (2)\n",
-    "\n",
-    "a = np.array([\n",
-    "        [4,2,-1],\n",
-    "        [3,-1,2],\n",
-    "        [11,3,0]\n",
-    "    ])\n",
-    "ab = np.array([\n",
-    "        [4,2,-1,2],\n",
-    "        [3,-1,2,10],\n",
-    "        [11,3,0,8]\n",
-    "    ])\n",
-    "n = 4\n",
-    "ra = np.linalg.matrix_rank(a)\n",
-    "rab = np.linalg.matrix_rank(ab)\n",
-    "\n",
-    "print(n,ra,rab)"
+# 计算秩
+
+a = np.array([
+        [1,2,3],
+        [2,3,-5],
+        [4,7,1]
+    ])
+b = np.array([
+        [3,2,0,5,0],
+        [3,-2,3,6,-1],
+        [2,0,1,5,-3],
+        [1,6,-4,-1,4]
+    ])
+r1 = np.linalg.matrix_rank(a)
+r2 = np.linalg.matrix_rank(b)
+
+print(r1,r2)
+
+# 例子
+a = np.array([
+        [1,2,2,3],
+        [2,1,-2,-2],
+        [1,-2,-4,-3]
+    ])
+ab = np.array([
+        [1,2,2,3,0],
+        [2,1,-2,-2,0],
+        [1,-2,-4,-3,0]
+    ])
+n = 4
+ra = np.linalg.matrix_rank(a)
+rab = np.linalg.matrix_rank(ab)
+
+print(n,ra,rab)
+
+# 练习1
+
+a = np.array([
+        [3,-2,0,-1],
+        [0,2,2,1],
+        [1,-2,-3,-2],
+        [0,1,2,1]
+    ])
+
+print(np.linalg.inv(a))
+np.linalg.det(a)
+
+# 练习2 (1)
+
+a = np.array([
+        [1,1,2,-1],
+        [2,1,1,-1],
+        [2,2,1,2]
+    ])
+ab = np.array([
+        [1,1,2,-1,0],
+        [2,1,1,-1,0],
+        [2,2,1,2,0]
+    ])
+n = 4
+ra = np.linalg.matrix_rank(a)
+rab = np.linalg.matrix_rank(ab)
+
+print(n,ra,rab)
+
+# 练习2 (2)
+
+a = np.array([
+        [4,2,-1],
+        [3,-1,2],
+        [11,3,0]
+    ])
+ab = np.array([
+        [4,2,-1,2],
+        [3,-1,2,10],
+        [11,3,0,8]
+    ])
+n = 4
+ra = np.linalg.matrix_rank(a)
+rab = np.linalg.matrix_rank(ab)
+
+print(n,ra,rab)
 
     

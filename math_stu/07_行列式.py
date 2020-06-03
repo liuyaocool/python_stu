@@ -1,15 +1,15 @@
+# n*n方阵
 
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-% matplotlib inline
 # 导入模块
 
 import warnings
 warnings.filterwarnings('ignore') 
 # 不发出警告
 
-行列式的计算 → numpy.linalg.det
+# 行列式的计算 → numpy.linalg.det
 # * 计算任何一个数组a的行列式，但是这里要求数组的最后两个维度必须是方阵"
 # 练习1
 d = np.array([
