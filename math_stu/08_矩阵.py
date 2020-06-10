@@ -89,7 +89,7 @@ b3 = np.array([
         [-3,-6]
     ])
 print(np.dot(a3,b3))
-print(np.dot(b3,a3))"
+print(np.dot(b3,a3))
 
 # 矩阵的转置
 
